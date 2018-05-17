@@ -1,33 +1,148 @@
  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<style>
-  body {
-    padding: 100px;
-    width: 1000px;
-    margin: auto;
-    text-align: left;
-    font-weight: 300;
-    font-family: 'Open Sans', sans-serif;
-    color: #121212;
-  }
-  h1, h2, h3, h4 {
-    font-family: 'Source Sans Pro', sans-serif;
-  }
-  #container {
-    width: 100%;
-    height: 500px;
-  }
-</style>
-<title>CS 184 Mesh Editor</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro" rel="stylesheet">
+<html lang="en">
 
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+
+
+/*.image-grid {
+    -ms-flex: 50%;  IE10 
+    flex: 50%;
+    max-width: 50%;
+}*/
+
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+    -ms-flex: 33%; /* IE10 */
+    flex: 33%;
+    max-width: 33%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    padding: 16px;
+    max-width: 180px;
+    vertical-align: middle;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%) opacity(100%);
+    transition: 0.3s;
+}
+
+.column img:hover {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(0%) opacity(50%);
+}
+
+/* Responsive layout - makes columns stack instead of next to each other */
+@media screen and (max-width: 900px) {
+    .column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+/*.social-btns {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}*/
+
+</style>
+
+<head>
+<!--     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png"> -->
+
+    <title>Joseph Moon</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="src/jquery.min.js"></script>
+    <script type="text/javascript" src="src/bootstrap.min.js"></script>
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' >
+    <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="src/bootstrap-social.css">
+    <link rel="stylesheet" type="text/css" href="src/bootstrap.min.css">
 </head>
 
 <body>
-<h1 align="middle">Joseph Moon</h1>
-<h2 align="middle">Computer Science Student, UC Berkeley</h1>
+
+<div class="title" style="text-align: center; padding: 30px;">
+    <h1>Joseph Moon</h1>
+    <p>Computer Science Graduate</p>
+    <p><a style="padding:10px;">Résumé</a><a style="padding:10px;">Education</a><a style="padding:10px;">Portfolio</a></p>
+    <!-- <div class="social-btns">
+        <a class="btn btn-block btn-social btn-md btn-github" style="width: 160px" href="https://github.com/jmoon1506"><i class="fa fa-github"></i>GitHub</a>
+    </div>
+    <div class="social-btns">
+        <a class="btn btn-block btn-social btn-md btn-linkedin" style="width: 160px" href="https://www.linkedin.com/in/josephymoon"><i class="fa fa-linkedin"></i>LinkedIn</a>
+    </div> -->
+    <a class="btn btn-social-icon btn-lg btn-github" href="https://github.com/jmoon1506"><i class="fa fa-github"></i></a>
+    <a class="btn btn-social-icon btn-lg btn-linkedin" href="https://www.linkedin.com/in/josephymoon/"><i class="fa fa-linkedin"></i></a>
+</div>
+
+<div style="width: 100%; overflow: hidden; padding: 16px;">
+    <div style="width: 50%; float: left;">
+        <div class="row"> 
+            <div class="column">
+            <img src="images/iconoir.png" style="width:100%" id="iconoir">
+            <img src="images/cs160-chat.png" style="width:100%" id="cs184-chat">
+            <img src="images/gdvoronoi.png" style="width:100%" id="gdvoronoi">
+            <img src="images/textbubble.png" style="width:100%" id="textbubble">
+            </div>
+            <div class="column">
+            <img src="images/cs267-minesweeper.png" style="width:100%" id="cs184-minesweeper">
+            <img src="images/capstone-cifar.png" style="width:100%" id="capstone-cifar">
+            <img src="images/cs189-epochs.png" style="width:100%" id="cs184-epochs">
+            <img src="images/cs267-particles.png" style="width:100%" id="cs184-particles">
+            <img src="images/cs184-cloth.png" style="width:100%" id="cs184-cloth">
+            </div>
+            <div class="column">
+            <img src="images/cs184-raybundling.png" style="width:100%" id="cs184-raybundling">
+            <img src="images/cs184-caustics.png" style="width:100%" id="cs184-caustics">
+            <img src="images/cs184-toonshader.png" style="width:100%" id="cs184-toonshader">
+            <img src="images/cs184-teapot.png" style="width:100%" id="cs184-teapot">
+            <img src="images/cs184-mipmap.png" style="width:100%" id="cs184-mipmap">
+            </div>
+        </div>
+    </div>
+    <div class="sidebar" id="sidebar" style="margin-left: 50%;">
+        <!-- <img src="images/cs184-teapot.png" style="width:100%"> -->
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $('#iconoir').click(function(){
+        });
+    });
+</script>
 
 </body>
 </html>
