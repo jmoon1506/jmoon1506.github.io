@@ -11,14 +11,6 @@ body {
     font-family: Arial;
 }
 
-
-
-/*.image-grid {
-    -ms-flex: 50%;  IE10 
-    flex: 50%;
-    max-width: 50%;
-}*/
-
 .row {
     display: -ms-flexbox; /* IE10 */
     display: flex;
@@ -27,7 +19,7 @@ body {
     padding: 0 4px;
 }
 
-/* Create four equal columns that sits next to each other */
+/* Create three equal columns that sit next to each other */
 .column {
     -ms-flex: 33%; /* IE10 */
     flex: 33%;
@@ -67,19 +59,20 @@ body {
     }
 }
 
-/*.social-btns {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}*/
+.project-img {
+    width: 100%;
+}
+
+.project-desc {
+    display: none;
+}
 
 </style>
 
 <head>
-<!--     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png"> -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
 
     <title>Joseph Moon</title>
     <meta charset="utf-8">
@@ -97,49 +90,235 @@ body {
     <h1>Joseph Moon</h1>
     <p>Computer Science Graduate</p>
     <p><a style="padding:10px;">Résumé</a><a style="padding:10px;">Education</a><a style="padding:10px;">Portfolio</a></p>
-    <!-- <div class="social-btns">
-        <a class="btn btn-block btn-social btn-md btn-github" style="width: 160px" href="https://github.com/jmoon1506"><i class="fa fa-github"></i>GitHub</a>
-    </div>
-    <div class="social-btns">
-        <a class="btn btn-block btn-social btn-md btn-linkedin" style="width: 160px" href="https://www.linkedin.com/in/josephymoon"><i class="fa fa-linkedin"></i>LinkedIn</a>
-    </div> -->
     <a class="btn btn-social-icon btn-lg btn-github" href="https://github.com/jmoon1506"><i class="fa fa-github"></i></a>
     <a class="btn btn-social-icon btn-lg btn-linkedin" href="https://www.linkedin.com/in/josephymoon/"><i class="fa fa-linkedin"></i></a>
 </div>
 
 <div style="width: 100%; overflow: hidden; padding: 16px;">
-    <div style="width: 50%; float: left;">
+    <div style="width: 40%; float: left;">
         <div class="row"> 
             <div class="column">
-            <img src="images/iconoir.png" style="width:100%" id="iconoir">
-            <img src="images/cs160-chat.png" style="width:100%" id="cs184-chat">
-            <img src="images/gdvoronoi.png" style="width:100%" id="gdvoronoi">
-            <img src="images/textbubble.png" style="width:100%" id="textbubble">
+            <img class="project-img" src="images/iconoir.png" id="iconoir">
+            <img class="project-img" src="images/cs160-chat.png" id="cs160-chat">
+            <img class="project-img" src="images/gdvoronoi.png" id="gdvoronoi">
+            <img class="project-img" src="images/textbubble.png" id="textbubble">
+            <img class="project-img" src="images/cs324.png" id="cs324">
             </div>
             <div class="column">
-            <img src="images/cs267-minesweeper.png" style="width:100%" id="cs184-minesweeper">
-            <img src="images/capstone-cifar.png" style="width:100%" id="capstone-cifar">
-            <img src="images/cs189-epochs.png" style="width:100%" id="cs184-epochs">
-            <img src="images/cs267-particles.png" style="width:100%" id="cs184-particles">
-            <img src="images/cs184-cloth.png" style="width:100%" id="cs184-cloth">
+            <img class="project-img" src="images/cs267-minesweeper.png" id="cs267-minesweeper">
+            <img class="project-img" src="images/capstone-cifar.png" id="capstone">
+            <img class="project-img" src="images/cs189-epochs.png" id="cs189">
+            <img class="project-img" src="images/cs267-particles.png" id="cs267-particles">
+            <img class="project-img" src="images/cs184-cloth.png" id="cs184-cloth">
             </div>
             <div class="column">
-            <img src="images/cs184-raybundling.png" style="width:100%" id="cs184-raybundling">
-            <img src="images/cs184-caustics.png" style="width:100%" id="cs184-caustics">
-            <img src="images/cs184-toonshader.png" style="width:100%" id="cs184-toonshader">
-            <img src="images/cs184-teapot.png" style="width:100%" id="cs184-teapot">
-            <img src="images/cs184-mipmap.png" style="width:100%" id="cs184-mipmap">
+            <img class="project-img" src="images/cs184-raybundling.png" id="cs184-raybundling">
+            <img class="project-img" src="images/cs184-caustics.png" id="cs184-caustics">
+            <img class="project-img" src="images/cs184-toonshader.png" id="cs184-toonshader">
+            <img class="project-img" src="images/cs184-teapot.png" id="cs184-teapot">
+            <img class="project-img" src="images/cs184-mipmap.png" id="cs184-mipmap">
             </div>
         </div>
     </div>
-    <div class="sidebar" id="sidebar" style="margin-left: 50%;">
-        <!-- <img src="images/cs184-teapot.png" style="width:100%"> -->
+    <div style="margin-left: 43%; text-align: center;">
+        <div class="project-desc" id="iconoir-desc">
+            <h3>Iconoir</h3>
+            <div style="display: flex; flex-wrap: nowrap; padding: 16px">
+                <span style="max-width: 24.5%"><img src="images/iconoir-compare.jpg" style="max-width: 90%"/></span>
+                <span style="max-width: 75.5%"><img src="images/iconoir-advert.jpg" style="max-width: 90%"/></span>
+            </div>
+            <div style="text-align: left;">
+                <p >Minimalist user interface for Android. Thanks to a complex system of inter-app communication, it does not require a rooted device. Developed independently, with guidance from the UC Berkeley startup community.</p>
+                <p>Type: Hobby</p>
+                <p>Skills: Java, Android, Adobe Suite</p>
+                <p>Links: <a href="https://play.google.com/store/apps/details?id=com.iconoir.settings">Google Play</a>, <a href="https://github.com/jmoon1506/Iconoir">GitHub</a></p>
+            </div>
+        </div>
+        <div class="project-desc" id="cs160-chat-desc">
+            <h3>PolitiChat</h3>
+            <div style="display: flex; flex-wrap: nowrap; padding: 16px">
+                <span style="max-width: 60%"><img src="images/cs160-embed-large.jpeg" style="max-width: 90%"/></span>
+                <span style="max-width: 40%"><img src="images/cs160-chat-large.png" style="max-width: 90%"/></span>
+            </div>
+            <div style="text-align: left;">
+                <p >Worked with a project group to address the course theme: "bridging the political divide." We developed a web application to discuss controversial political issues with the humanizing influence of face-to-face interaction.</p>
+                <p>Type: Coursework</p>
+                <p>Course: CS 260 User Interfaces, UC Berkeley</p>
+                <p>Skills: Javascript, Node, MongoDB</p>
+                <p>Links: <a href="https://github.com/jmoon1506/cs260-final-project">GitHub</a></p>
+            </div>
+        </div>
+        <div class="project-desc" id="gdvoronoi-desc">
+            <h3>Fortune's Algorithm</h3>
+            <img src="images/gdvoronoi-large.png" style="max-width: 40%; padding: 16px"/>
+            <div style="text-align: left;">
+                <p >Implemented Fortune's algorithm to generate Voronoi diagrams for the Godot game engine. A Voronoi diagram partitions a plane into regions defined by the nearest of a set of points, similar to the growth of minerals or biological cells. This algorithm uses a sweeping line to gradually triangulate the corners of those regions.</p>
+                <p>Type: Hobby</p>
+                <p>Skills: C++, Godot</p>
+                <p>Links: <a href="https://github.com/jmoon1506/gdvoronoi">GitHub</a></p>
+            </div>
+        </div>
+        <div class="project-desc" id="textbubble-desc">
+            <h3>Fortune's Algorithm</h3>
+            <img src="images/textbubble-large.png" style="max-width: 60%; padding: 16px"/>
+            <div style="text-align: left;">
+                <p >Fast text rendering engine application using SDL2. Reads and displays text data from XML. Animated to behave similarly to modern text messaging programs. Primary goal was high performance across a range of platforms.</p>
+                <p>Type: Hobby</p>
+                <p>Skills: C++, SDL</p>
+                <p>Links: <a href="https://github.com/jmoon1506/project11">GitHub</a></p>
+            </div>
+        </div>
+        <div class="project-desc" id="cs324-desc">
+            <h3>Video Game Mockup</h3>
+            <img src="images/cs324-large.png" style="max-width: 60%; padding: 16px"/>
+            <div style="text-align: left;">
+                <p>Created an interactive mockup of a space-themed video game. Includes an animated tutorial and custom 2D glow shader.</p>
+                <p>Type: Coursework</p>
+                <p>Course: CS 324 Visualization, UT Austin</p>
+                <p>Skills: C#, Unity, HLSL</p>
+                <p>Links: <a href="https://github.com/jmoon1506/cs324-final-project">GitHub</a></p>
+            </div>
+        </div>
+        <div class="project-desc" id="cs267-minesweeper-desc">
+            <h3>Parallel Algorithm for Minesweeper</h3>
+            <img src="images/cs267-minesweeper-large.png" style="max-width: 70%; padding: 16px"/>
+            <div style="text-align: left;">
+                <p>Worked with a small group to develop a parallelized solving algorithm for Minesweeper. Our algorithm defines board state as a constrained linear problem and proposes all feasible solutions. Using Python's native multiprocessing library or MPI, we then distribute feasible solutions between processors and determine the probability of a mine on each tile. Combining these results, we can rapidly find the optimal tile to clear. In addition, we built a web application to display the algorithm's performance.</p>
+                <p>Type: Coursework</p>
+                <p>Course: CS 267 Parallel Computing, UC Berkeley</p>
+                <p>Skills: Python, MPI, Javascript</p>
+                <p>Links: <a href="https://github.com/jmoon1506/cs267-final-project">GitHub</a>, <a href="https://drive.google.com/open?id=1BlVhCrsoThTkwu1E34__mnajBtzA64bC">Report</a>, <a href="https://parallel-minesweeper.herokuapp.com/">Live Demo</a></p>
+            </div>
+        </div>
+        <div class="project-desc" id="capstone-desc">
+            <h3>Interactive Machine Learning</h3>
+            <div style="display: flex; flex-wrap: nowrap; padding: 16px">
+                <span style="max-width: 45%"><img src="images/capstone_mnist_large.png" style="max-width: 90%"/></span>
+                <span style="max-width: 55%"><img src="images/capstone_controls_large.png" style="max-width: 90%"/></span>
+            </div>
+            <div style="text-align: left;">
+                <p>Worked with a project group and faculty mentor to develop interactive visualization tools for convolutional neural networks. We used a generative adversarial network to create "realistic" images that would strongly activate a network. Together with real-time controls, this helps developers better understand the behavior of a network during training and deployment.</p>
+                <p>Type: Coursework</p>
+                <p>Course: Capstone Project, UC Berkeley</p>
+                <p>Skills: Python, TensorFlow</p>
+                <p>Links: <a href="https://github.com/jmoon1506/InteractiveML">GitHub</a>, <a href="https://drive.google.com/open?id=1mQw5mL4RRIZ0E-KQcNj_tm-oY-BTjrHI">Report</a>, <a href="https://www.youtube.com/watch?v=B046TO59yD0">Video</a></p>
+            </div>
+        </div>
+        <div class="project-desc" id="cs189-desc">
+            <h3>Sketch Reconstruction</h3>
+            <img src="images/cs189-vae-large.jpg" style="max-width: 80%; padding: 16px"/>
+            <div style="text-align: left;">
+                <p>Drawing inspiration from Google's SketchRNN, our project group implemented a variational autoencoder to reconstruct rasterized sketch images. We jointly trained two neural networks - one to encode images into a latent vector and another to decode them. Then using the decoder network, we are able to generate novel images based on variables in the latent vector.</p>
+                <p>Type: Coursework</p>
+                <p>Course: CS 289 Machine Learning, UC Berkeley</p>
+                <p>Skills: Python, TensorFlow</p>
+                <p>Links: <a href="https://github.com/jmoon1506/cs189_final_project">GitHub</a>, <a href="https://drive.google.com/open?id=1tyuOw4dDJzt0o4jqfDm8xInKIH0wfHcN">Report</a></p>
+            </div>
+        </div>
+        <div class="project-desc" id="cs267-particles-desc">
+            <h3>Parallel Particle Simulation</h3>
+            <div style="display: flex; flex-wrap: nowrap; padding: 16px">
+                <span style="max-width: 60%"><img src="images/cs267-particles-large.png" style="max-width: 90%"/></span>
+                <span style="max-width: 40%"><img src="images/cs267-particles-large2.jpg" style="max-width: 90%"/></span>
+            </div>
+            <div style="text-align: left;">
+                <p>Implemented shared memory, distributed memory, and GPU parallelism for a simple particle simulation.</p>
+                <p>Type: Coursework</p>
+                <p>Course: CS 267 Parallel Computing, UC Berkeley</p>
+                <p>Skills: C++, OpenMP, MPI, CUDA</p>
+                <p>Links: <a href="https://drive.google.com/open?id=1X1EzrgoPRIRZ6ZS6Oc2T5bLB4tLb4ooq">Report</a></p>
+            </div>
+        </div>
+        <div class="project-desc" id="cs184-cloth-desc">
+            <h3>Cloth Simulation</h3>
+            <div style="display: flex; flex-wrap: nowrap; padding: 16px">
+                <span style="max-width: 58%"><img src="images/cs184-clothphysics-large.png" style="max-width: 90%"/></span>
+                <span style="max-width: 42%"><img src="images/cs184-clothcrumble-large.png" style="max-width: 90%"/></span>
+            </div>
+            <div style="text-align: left;">
+                <p>Implemented a spring-based cloth simulation. Includes folding and physics collisions.</p>
+                <p>Type: Coursework</p>
+                <p>Course: CS 284 Graphics, UC Berkeley</p>
+                <p>Skills: C++, OpenGL</p>
+            </div>
+        </div>
+        <div class="project-desc" id="cs184-raybundling-desc">
+            <h3>Cloth Simulation</h3>
+            <div style="display: flex; flex-wrap: nowrap; padding: 16px">
+                <span style="max-width: 58%"><img src="images/cs184-clothphysics-large.png" style="max-width: 90%"/></span>
+                <span style="max-width: 42%"><img src="images/cs184-clothcrumble-large.png" style="max-width: 90%"/></span>
+            </div>
+            <div style="text-align: left;">
+                <p>Developed a shader-based 2D raytracing algorithm.</p>
+                <p>Type: Coursework</p>
+                <p>Course: CS 284 Graphics, UC Berkeley</p>
+                <p>Skills: Javascript, WebGL, GLSL</p>
+            </div>
+        </div>
+        <div class="project-desc" id="cs184-caustics-desc">
+            <h3>Cloth Simulation</h3>
+            <div style="display: flex; flex-wrap: nowrap; padding: 16px">
+                <span style="max-width: 58%"><img src="images/cs184-raytracer-large.png" style="max-width: 90%"/></span>
+                <span style="max-width: 58%"><img src="images/cs184-caustics-large.png" style="max-width: 90%"/></span>
+                <span style="max-width: 58%"><img src="images/cs184-microfacets-large.png" style="max-width: 90%"/></span>
+            </div>
+            <div style="text-align: left;">
+                <p>Implemented a raycasting renderer with many features. These include indirect lighting, caustics, importance sampling, microfacet materials, and depth of field, among others.</p>
+                <p>Type: Coursework</p>
+                <p>Course: CS 284 Graphics, UC Berkeley</p>
+                <p>Skills: C++, OpenGL</p>
+            </div>
+        </div>
+        <div class="project-desc" id="cs184-toonshader-desc">
+            <h3>Cloth Simulation</h3>
+            <div style="display: flex; flex-wrap: nowrap; padding: 16px">
+                <span style="max-width: 58%"><img src="images/cs184-clothphysics-large.png" style="max-width: 90%"/></span>
+                <span style="max-width: 42%"><img src="images/cs184-clothcrumble-large.png" style="max-width: 90%"/></span>
+            </div>
+            <div style="text-align: left;">
+                <p>Implemented a spring-based cloth simulation. Includes folding and physics collisions.</p>
+                <p>Type: Coursework</p>
+                <p>Course: CS 284 Graphics, UC Berkeley</p>
+                <p>Skills: C++, OpenGL</p>
+            </div>
+        </div>
+        <div class="project-desc" id="cs184-teapot-desc">
+            <h3>Cloth Simulation</h3>
+            <div style="display: flex; flex-wrap: nowrap; padding: 16px">
+                <span style="max-width: 58%"><img src="images/cs184-clothphysics-large.png" style="max-width: 90%"/></span>
+                <span style="max-width: 42%"><img src="images/cs184-clothcrumble-large.png" style="max-width: 90%"/></span>
+            </div>
+            <div style="text-align: left;">
+                <p>Implemented a spring-based cloth simulation. Includes folding and physics collisions.</p>
+                <p>Type: Coursework</p>
+                <p>Course: CS 284 Graphics, UC Berkeley</p>
+                <p>Skills: C++, OpenGL</p>
+            </div>
+        </div>
+        <div class="project-desc" id="cs184-mipmap-desc">
+            <h3>Cloth Simulation</h3>
+            <div style="display: flex; flex-wrap: nowrap; padding: 16px">
+                <span style="max-width: 58%"><img src="images/cs184-clothphysics-large.png" style="max-width: 90%"/></span>
+                <span style="max-width: 42%"><img src="images/cs184-clothcrumble-large.png" style="max-width: 90%"/></span>
+            </div>
+            <div style="text-align: left;">
+                <p>Implemented a spring-based cloth simulation. Includes folding and physics collisions.</p>
+                <p>Type: Coursework</p>
+                <p>Course: CS 284 Graphics, UC Berkeley</p>
+                <p>Skills: C++, OpenGL</p>
+            </div>
+        </div>
     </div>
 </div>
 
 <script>
-    $(document).ready(function(){
-        $('#iconoir').click(function(){
+    $(document).ready(function() {
+        $('img.project-img').click(function() {
+            var descs = document.getElementsByClassName("project-desc");
+            for (var i = 0; i < descs.length; i++) {
+               descs[i].style = "display: none";
+            }
+            document.getElementById(this.id + '-desc').style.display = 'block';
         });
     });
 </script>
