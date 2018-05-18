@@ -109,13 +109,13 @@ body {
             <img class="project-img" src="images/capstone-cifar.png" id="capstone">
             <img class="project-img" src="images/cs189-epochs.png" id="cs189">
             <img class="project-img" src="images/cs267-particles.png" id="cs267-particles">
-            <img class="project-img" src="images/cs184-cloth.png" id="cs184-cloth">
+            <img class="project-img" src="images/cs184-teapot.png" id="cs184-teapot">
             </div>
             <div class="column">
             <img class="project-img" src="images/cs184-raybundling.png" id="cs184-raybundling">
             <img class="project-img" src="images/cs184-caustics.png" id="cs184-caustics">
             <img class="project-img" src="images/cs184-toonshader.png" id="cs184-toonshader">
-            <img class="project-img" src="images/cs184-teapot.png" id="cs184-teapot">
+            <img class="project-img" src="images/cs184-cloth.png" id="cs184-cloth">
             <img class="project-img" src="images/cs184-mipmap.png" id="cs184-mipmap">
             </div>
         </div>
@@ -150,7 +150,11 @@ body {
         </div>
         <div class="project-desc" id="gdvoronoi-desc">
             <h3>Fortune's Algorithm</h3>
-            <img src="images/gdvoronoi-large.png" style="max-width: 40%; padding: 16px"/>
+            <div style="display: flex; flex-wrap: nowrap; padding: 16px">
+                <span style="max-width: 50%"><img src="images/gdvoronoi-large.png" style="max-width: 80%"/></span>
+                <span style="max-width: 50%"><img src="images/gdvoronoi-fortune.jpg" style="max-width: 80%"/></span>
+            </div>
+            <!-- <img src="images/gdvoronoi-large.png" style="max-width: 40%; padding: 16px"/> -->
             <div style="text-align: left;">
                 <p >Implemented Fortune's algorithm to generate Voronoi diagrams for the Godot game engine. A Voronoi diagram partitions a plane into regions defined by the nearest of a set of points, similar to the growth of minerals or biological cells. This algorithm uses a sweeping line to gradually triangulate the corners of those regions.</p>
                 <p>Type: Hobby</p>
@@ -159,7 +163,7 @@ body {
             </div>
         </div>
         <div class="project-desc" id="textbubble-desc">
-            <h3>Fortune's Algorithm</h3>
+            <h3>Fast Text Bubble Renderer</h3>
             <img src="images/textbubble-large.png" style="max-width: 60%; padding: 16px"/>
             <div style="text-align: left;">
                 <p >Fast text rendering engine application using SDL2. Reads and displays text data from XML. Animated to behave similarly to modern text messaging programs. Primary goal was high performance across a range of platforms.</p>
@@ -240,72 +244,86 @@ body {
                 <p>Type: Coursework</p>
                 <p>Course: CS 284 Graphics, UC Berkeley</p>
                 <p>Skills: C++, OpenGL</p>
+                <p>Links: <a href="http://joemoon.me/cs184-combined/hw5.html">Report</a></p>
             </div>
         </div>
         <div class="project-desc" id="cs184-raybundling-desc">
-            <h3>Cloth Simulation</h3>
+            <h3>Real-time 2D Raytracing</h3>
             <div style="display: flex; flex-wrap: nowrap; padding: 16px">
-                <span style="max-width: 58%"><img src="images/cs184-clothphysics-large.png" style="max-width: 90%"/></span>
-                <span style="max-width: 42%"><img src="images/cs184-clothcrumble-large.png" style="max-width: 90%"/></span>
+                <span style="max-width: 40%"><img src="images/cs184-raybundling-lights.png" style="max-width: 90%"/></span>
+                <span style="max-width: 25%"><img src="images/cs184-raybundling-isectbuf.png" style="max-width: 90%"/></span>
+                <span style="max-width: 35%"><img src="images/cs184-raybundling-diagram.png" style="max-width: 90%"/></span>
             </div>
             <div style="text-align: left;">
-                <p>Developed a shader-based 2D raytracing algorithm.</p>
+                <p>Developed a 2D raytracing algorithm that runs in real-time. By writing shaders to take advantage of parallel ray-bundles, it is possible to calculate thousands of intersections at minimal computational cost. Unfortunately, texture sampling is too expensive for this algorithm to be practical for complex scenes.</p>
                 <p>Type: Coursework</p>
                 <p>Course: CS 284 Graphics, UC Berkeley</p>
                 <p>Skills: Javascript, WebGL, GLSL</p>
+                <p>Links: <a href="https://github.com/jmoon1506/cs184-final-project">GitHub</a>, <a href="http://joemoon.me/cs184-final-project/report.html">Report</a>, <a href="http://joemoon.me/cs184-final-project/demo.html">Live Demo</a></p>
             </div>
         </div>
         <div class="project-desc" id="cs184-caustics-desc">
-            <h3>Cloth Simulation</h3>
+            <h3>3D Raytracing Renderer</h3>
             <div style="display: flex; flex-wrap: nowrap; padding: 16px">
-                <span style="max-width: 58%"><img src="images/cs184-raytracer-large.png" style="max-width: 90%"/></span>
-                <span style="max-width: 58%"><img src="images/cs184-caustics-large.png" style="max-width: 90%"/></span>
-                <span style="max-width: 58%"><img src="images/cs184-microfacets-large.png" style="max-width: 90%"/></span>
+                <span style="max-width: 33%"><img src="images/cs184-raytracer-mesh.png" style="max-width: 90%"/></span>
+                <span style="max-width: 33%"><img src="images/cs184-raytracer-large.png" style="max-width: 90%"/></span>
+                <span style="max-width: 33%"><img src="images/cs184-caustics-large.png" style="max-width: 90%"/></span>
+            </div>
+            <div style="display: flex; flex-wrap: nowrap; padding: 16px">
+                <span style="max-width: 33%"><img src="images/cs184-raytracer-env.png" style="max-width: 90%"/></span>
+                <span style="max-width: 33%"><img src="images/cs184-raytracer-bunny.png" style="max-width: 90%"/></span>
+                <span style="max-width: 33%"><img src="images/cs184-dof-large.png" style="max-width: 90%"/></span>
             </div>
             <div style="text-align: left;">
-                <p>Implemented a raycasting renderer with many features. These include indirect lighting, caustics, importance sampling, microfacet materials, and depth of field, among others.</p>
+                <p>Implemented a raycasting renderer with many features. These include caustics, importance sampling, microfacet materials, depth of field, and many others.</p>
                 <p>Type: Coursework</p>
                 <p>Course: CS 284 Graphics, UC Berkeley</p>
                 <p>Skills: C++, OpenGL</p>
+                <p>Links: <a href="http://joemoon.me/cs184-combined/hw3.html">Report</a></p>
             </div>
         </div>
         <div class="project-desc" id="cs184-toonshader-desc">
-            <h3>Cloth Simulation</h3>
+            <h3>Shader Exercises</h3>
             <div style="display: flex; flex-wrap: nowrap; padding: 16px">
-                <span style="max-width: 58%"><img src="images/cs184-clothphysics-large.png" style="max-width: 90%"/></span>
-                <span style="max-width: 42%"><img src="images/cs184-clothcrumble-large.png" style="max-width: 90%"/></span>
+                <span style="max-width: 35%"><img src="images/cs184-toonshader-teapot.png" style="max-width: 90%"/></span>
+                <span style="max-width: 39%"><img src="images/cs184-toonshader-grass.png" style="max-width: 90%"/></span>
+                <span style="max-width: 36%"><img src="images/cs184-toonshader-reflect.png" style="max-width: 90%"/></span>
             </div>
             <div style="text-align: left;">
-                <p>Implemented a spring-based cloth simulation. Includes folding and physics collisions.</p>
+                <p>Wrote several common shaders in GLSL, including bump mapping, toon shading, reflection, and refraction.</p>
                 <p>Type: Coursework</p>
                 <p>Course: CS 284 Graphics, UC Berkeley</p>
-                <p>Skills: C++, OpenGL</p>
+                <p>Skills: Javascript, WebGL, GLSL</p>
+                <p>Links: <a href="http://joemoon.me/cs184-combined/hw4.html">Report</a>, <a href="http://joemoon.me/cs184-combined/gl/">Live Demo</a></p>
             </div>
         </div>
         <div class="project-desc" id="cs184-teapot-desc">
-            <h3>Cloth Simulation</h3>
+            <h3>Mesh Editor</h3>
             <div style="display: flex; flex-wrap: nowrap; padding: 16px">
-                <span style="max-width: 58%"><img src="images/cs184-clothphysics-large.png" style="max-width: 90%"/></span>
-                <span style="max-width: 42%"><img src="images/cs184-clothcrumble-large.png" style="max-width: 90%"/></span>
+                <span style="max-width: 33%"><img src="images/cs184-teapot-subd1.png" style="max-width: 90%"/></span>
+                <span style="max-width: 33%"><img src="images/cs184-teapot-subd2.png" style="max-width: 90%"/></span>
+                <span style="max-width: 33%"><img src="images/cs184-teapot-subd3.png" style="max-width: 90%"/></span>
             </div>
             <div style="text-align: left;">
-                <p>Implemented a spring-based cloth simulation. Includes folding and physics collisions.</p>
+                <p>Implemented features of a 3D mesh editor. Includes Bezier surfaces, mesh restructuring, and loop subdivision.</p>
                 <p>Type: Coursework</p>
                 <p>Course: CS 284 Graphics, UC Berkeley</p>
                 <p>Skills: C++, OpenGL</p>
+                <p>Links: <a href="http://joemoon.me/cs184-combined/hw2.html">Report</a></p>
             </div>
         </div>
         <div class="project-desc" id="cs184-mipmap-desc">
-            <h3>Cloth Simulation</h3>
+            <h3>Rasterizer</h3>
             <div style="display: flex; flex-wrap: nowrap; padding: 16px">
-                <span style="max-width: 58%"><img src="images/cs184-clothphysics-large.png" style="max-width: 90%"/></span>
-                <span style="max-width: 42%"><img src="images/cs184-clothcrumble-large.png" style="max-width: 90%"/></span>
+                <span style="max-width: 60%"><img src="images/cs184-mipmap-bilinear.png" style="max-width: 90%"/></span>
+                <span style="max-width: 40%"><img src="images/cs184-mipmap-large.png" style="max-width: 90%"/></span>
             </div>
             <div style="text-align: left;">
-                <p>Implemented a spring-based cloth simulation. Includes folding and physics collisions.</p>
+                <p>Wrote a rasterizer for SVG and texture data. Implemented screen rasterization techniques, such as supersampling, bilinear interpolation, and mip-mapping.</p>
                 <p>Type: Coursework</p>
                 <p>Course: CS 284 Graphics, UC Berkeley</p>
                 <p>Skills: C++, OpenGL</p>
+                <p>Links: <a href="http://joemoon.me/cs184-combined/hw1.html">Report</a></p>
             </div>
         </div>
     </div>
