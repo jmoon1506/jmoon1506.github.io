@@ -36,7 +36,7 @@ p, li {
 
 .desc-header {
     display: inline-block;
-    width: 10%;
+    width: 12%;
     /*padding: .75rem 0;*/
     padding: 0 0;
     margin: 0;
@@ -108,7 +108,7 @@ p, li {
 }
 
 @media screen and (max-width: 750px) {
-    ul li {
+    .desc-headers-li {
         display: block;
     }
     #desc-header-underline {
