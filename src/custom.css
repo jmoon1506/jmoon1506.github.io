@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    /*font-family: Arial;*/
+}
+
+p, li {
+    font-family: 'Roboto Slab', serif;
+}
+
+.project-img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.project-desc {
+    display: none;
+}
+
+.desc-headers {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 0 32px 0;
+}
+
+.desc-headers-li {
+    display: inline;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 0;
+}
+
+.desc-header {
+    display: inline-block;
+    width: 10%;
+    /*padding: .75rem 0;*/
+    padding: 0 0;
+    margin: 0;
+    text-decoration: none;
+    color: #333;
+}
+
+.desc-header:hover {
+    text-decoration: none;
+    color: #777;
+}
+
+#desc-header-underline {
+    height: 0.15rem;
+    width: 0;
+    margin: 0 0;
+    background: #333;
+    border: none;
+    transition: .3s ease-in-out;
+    margin-left: 0;
+}
+
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -ms-transition: none !important;
+  transition: none !important;
+}
+
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Create three equal columns that sit next to each other */
+.column {
+    -ms-flex: 33%; /* IE10 */
+    flex: 33%;
+    max-width: 33%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    padding: 16px;
+    max-width: 180px;
+    vertical-align: middle;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%) opacity(100%);
+    transition: 0.2s;
+}
+
+.column img:hover {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(0%) opacity(50%);
+}
+
+/* Responsive layout - makes columns stack instead of next to each other */
+@media screen and (max-width: 900px) {
+    .column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    ul li {
+        display: block;
+    }
+    #desc-header-underline {
+        display: none;
+    }
+    .desc-header:active {
+        text-decoration: underline;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+}
