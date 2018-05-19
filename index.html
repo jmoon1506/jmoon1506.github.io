@@ -10,8 +10,9 @@
     <meta charset="utf-8">
     <script type="text/javascript" src="src/jquery.min.js"></script>
     <script type="text/javascript" src="src/bootstrap.min.js"></script>
-    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Roboto+Slab|Merriweather|Open+Sans' >
-    <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Roboto+Slab'> -->
+    <!-- <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Roboto+Slab|Merriweather:400,400i,700|Open+Sans:400,700' > -->
+    <link rel="stylesheet" type="text/css" href="src/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="src/bootstrap-social.css">
     <link rel="stylesheet" type="text/css" href="src/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="src/custom.css">
@@ -21,7 +22,7 @@
 
 <div class="title" style="text-align: center; padding: 30px;">
     <h1>Joseph Moon</h1>
-    <p>Computer Science Graduate</p>
+    <h3>Computer Science Graduate</h3>
     <ul class="desc-headers">
         <li class="desc-headers-li"><a class="desc-header" id="desc-header-portfolio" href="#">Portfolio</a></li>
         <li class="desc-headers-li"><a class="desc-header" id="desc-header-education" href="#">Education</a></li>
@@ -285,8 +286,8 @@
             <hr/>
             <div style="display: flex; flex-wrap: nowrap; padding: 16px; text-align: left;">
                 <span style="max-width: 60%">
-                    <h6>EXPERIENCE</h6>
-                    <p>Software Developer - Iconoir</p>
+                    <h6 class='resume-header'>EXPERIENCE</h6>
+                    <p class='resume-job-title'>Software Developer</p><p class='resume-job-employer'> - Iconoir</p>
                     <p>Aug 2017 - Dec 2017</p>
                     <ul>
                         <li>Developed a native Android user interface app</li>
@@ -378,6 +379,18 @@
             $('#desc-header-underline').removeClass('notransition');
         });
     });
+</script>
+<script async>
+	WebFontConfig = {
+		google: {
+			families: ["Roboto Slab", "Open Sans:400,700", "Merriweather:400,400i,700"]
+		}
+	};
+	(function(d) {
+		var wf = d.createElement("script"), s = d.scripts[0];
+		wf.src = "src/webfont.js";
+		s.parentNode.insertBefore(wf, s);
+	})(document);
 </script>
 
 </body>
