@@ -8,7 +8,66 @@
 
 body {
     margin: 0;
-    font-family: Arial;
+    /*font-family: Arial;*/
+}
+
+p {
+    font-family: 'Roboto Slab', serif;
+}
+
+.project-img {
+    width: 100%;
+}
+
+.project-desc {
+    display: none;
+}
+
+ul {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+ul li {
+    display: inline;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 0;
+}
+
+.desc-header {
+    display: inline-block;
+    width: 10%;
+    /*padding: .75rem 0;*/
+    padding: 0 0;
+    margin: 0;
+    text-decoration: none;
+    color: #333;
+}
+
+.desc-header:hover {
+    text-decoration: none;
+    color: #777;
+}
+
+#desc-header-underline {
+    height: 0.15rem;
+    width: 0;
+    margin: 0 0;
+    background: #333;
+    border: none;
+    transition: .3s ease-in-out;
+    margin-left: 0;
+}
+
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -ms-transition: none !important;
+  transition: none !important;
 }
 
 .row {
@@ -34,7 +93,7 @@ body {
     vertical-align: middle;
     -webkit-filter: grayscale(0%);
     filter: grayscale(0%) opacity(100%);
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .column img:hover {
@@ -51,6 +110,18 @@ body {
     }
 }
 
+@media screen and (max-width: 750px) {
+    ul li {
+        display: block;
+    }
+    #desc-header-underline {
+        display: none;
+    }
+    .desc-header:active {
+        text-decoration: underline;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .column {
         -ms-flex: 100%;
@@ -59,13 +130,7 @@ body {
     }
 }
 
-.project-img {
-    width: 100%;
-}
 
-.project-desc {
-    display: none;
-}
 
 </style>
 
@@ -78,10 +143,10 @@ body {
     <meta charset="utf-8">
     <script type="text/javascript" src="src/jquery.min.js"></script>
     <script type="text/javascript" src="src/bootstrap.min.js"></script>
-    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' >
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Roboto+Slab' >
     <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="src/bootstrap-social.css">
-    <link rel="stylesheet" type="text/css" href="src/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="src/bootstrap.css">
 </head>
 
 <body>
@@ -89,10 +154,17 @@ body {
 <div class="title" style="text-align: center; padding: 30px;">
     <h1>Joseph Moon</h1>
     <p>Computer Science Graduate</p>
-    <p><a style="padding:10px;">Résumé</a><a style="padding:10px;">Education</a><a style="padding:10px;">Portfolio</a></p>
+    <ul>
+        <li><a class="desc-header" id="desc-header-portfolio" href="#">Portfolio</a></li>
+        <li><a class="desc-header" id="desc-header-education" href="#">Education</a></li>
+        <li><a class="desc-header" id="desc-header-resume" href="#">Résumé</a></li>
+        <hr id="desc-header-underline"/>
+    </ul>
     <a class="btn btn-social-icon btn-lg btn-github" href="https://github.com/jmoon1506"><i class="fa fa-github"></i></a>
     <a class="btn btn-social-icon btn-lg btn-linkedin" href="https://www.linkedin.com/in/josephymoon/"><i class="fa fa-linkedin"></i></a>
 </div>
+
+
 
 <div style="width: 100%; overflow: hidden; padding: 16px;">
     <div style="width: 40%; float: left;">
@@ -106,16 +178,16 @@ body {
             </div>
             <div class="column">
             <img class="project-img" src="images/cs267-minesweeper.png" id="cs267-minesweeper">
-            <img class="project-img" src="images/capstone-cifar.png" id="capstone">
             <img class="project-img" src="images/cs189-epochs.png" id="cs189">
+            <img class="project-img" src="images/cs184-cloth.png" id="cs184-cloth">
             <img class="project-img" src="images/cs267-particles.png" id="cs267-particles">
             <img class="project-img" src="images/cs184-teapot.png" id="cs184-teapot">
             </div>
             <div class="column">
-            <img class="project-img" src="images/cs184-raybundling.png" id="cs184-raybundling">
             <img class="project-img" src="images/cs184-caustics.png" id="cs184-caustics">
             <img class="project-img" src="images/cs184-toonshader.png" id="cs184-toonshader">
-            <img class="project-img" src="images/cs184-cloth.png" id="cs184-cloth">
+            <img class="project-img" src="images/cs184-raybundling.png" id="cs184-raybundling">
+            <img class="project-img" src="images/capstone-cifar.png" id="capstone">
             <img class="project-img" src="images/cs184-mipmap.png" id="cs184-mipmap">
             </div>
         </div>
@@ -330,6 +402,27 @@ body {
 </div>
 
 <script>
+    $.fn.textWidth = function(){
+        var text = $(this).html();
+        $(this).html('<span>'+text+'</span>');
+        var width = $(this).find('span:first').width();
+        $(this).html(text);
+        return width;
+    };
+
+    var current_desc_header;
+    var current_project_desc = 0;
+    function updateUnderline(width) {
+        if (current_desc_header) {
+            var underline = document.getElementById('desc-header-underline');
+            var rect = current_desc_header.getBoundingClientRect();
+            if (width)
+                underline.style.width = width + 'px';
+            underline.style['margin-left'] = (rect.left - 30 + (rect.width - parseInt(underline.style.width, 10)) / 2) + 'px';
+            // underline.style['padding-bottom'] = '100px';
+        }
+    }
+
     $(document).ready(function() {
         $('img.project-img').click(function() {
             var descs = document.getElementsByClassName("project-desc");
@@ -337,6 +430,34 @@ body {
                descs[i].style = "display: none";
             }
             document.getElementById(this.id + '-desc').style.display = 'block';
+
+            current_desc_header = document.getElementById('desc-header-portfolio');
+            width = $(current_desc_header).textWidth();
+            updateUnderline(width);
+        });
+        $('a.desc-header').click(function() {
+            // console.log(this.id);
+            var descs = document.getElementsByClassName("project-desc");
+            for (var i = 0; i < descs.length; i++) {
+               descs[i].style = "display: none";
+            }
+            if (this.id == 'desc-header-portfolio') {
+                // var randIdx = Math.floor(Math.random() * descs.length);
+                if (this == current_desc_header)
+                    current_project_desc = (current_project_desc + 1) % descs.length;
+                descs[current_project_desc].style.display = 'block';
+            } else if (this.id == 'desc-header-education') {
+            } else if (this.id == 'desc-header-resume') {
+            }
+            current_desc_header = this;
+            width = $(this).textWidth();
+            updateUnderline(width);
+        });
+        $(window).resize(function(){
+            // width = $(this).textWidth();
+            $('#desc-header-underline').addClass('notransition');
+            updateUnderline();
+            $('#desc-header-underline').removeClass('notransition');
         });
     });
 </script>
