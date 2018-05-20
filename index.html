@@ -16,6 +16,8 @@
     <link rel="stylesheet" type="text/css" href="src/bootstrap-social.css">
     <link rel="stylesheet" type="text/css" href="src/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="src/custom.css">
+    <link rel="stylesheet" type="text/css" href="src/desktop.css" id='desktop'>
+    <link rel="stylesheet" type="text/css" href="src/mobile.css" id='mobile'>
 </head>
 
 <body>
@@ -273,8 +275,8 @@
         </div>
         
         <div id="resume-desc" style="display: none;">
-            <div align="left" style="padding: 0"><a class="btn btn-md link" href='resume.pdf' download><i class="fa fa-download"></i>&nbsp;Download</h3></a></div>
-            <hr/>
+            <div align="left" style="padding: 0;"><a class="btn btn-md link" href='resume.pdf' download><i class="fa fa-download"></i>&nbsp;Download</h3></a></div>
+            <hr style="margin: 1.5rem 0 1rem 0;" />
             <div style="display: flex; flex-wrap: nowrap; text-align: left;">
                 <span style="max-width: 60%">
                     <p class="resume-item" style="font-size: 2.5rem;">Joseph Moon</p>
@@ -393,7 +395,17 @@
         }
     }
 
+    function isMobileDevice() {
+        return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+    };
+
     $(document).ready(function() {
+        if (isMobileDevice()) {
+            $(document.getElementById('desktop')).attr('disabled', 'disabled');
+        } else {
+            $(document.getElementById('mobile')).attr('disabled', 'disabled');
+        }
+
         $('img.project-img').click(function() {
             document.getElementById('resume-desc').style = "display: none";
             document.getElementById('contact-desc').style = "display: none";

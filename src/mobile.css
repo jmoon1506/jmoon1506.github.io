@@ -1,0 +1,18 @@
+.column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+}
+.column img {
+    margin-top: 2px;
+    padding: 4px;
+}
+#imgs {
+    width: 20%;
+}
+#descs {
+    margin-left: 23%;
+}
+#content {
+    padding: 4px;
+}
