@@ -411,6 +411,7 @@
             current_desc_header = document.getElementById('desc-header-portfolio');
             width = $(current_desc_header).textWidth();
             updateUnderline(width);
+            updateFollowSpacer();
         });
         $('a.desc-header').click(function(e) {
             e.preventDefault();
