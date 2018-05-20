@@ -19,3 +19,49 @@
 .link {
 	font-size: 2rem;
 }
+h1 {
+	font-size: 3.5rem;
+}
+h4 {
+	font-size: 2rem;
+}
+p {
+    /*font-family: 'Roboto Slab', serif;*/
+    font-size: 2rem;
+}
+
+.desc-header {
+	font-size: 2rem;
+}
+
+.project-desc div p {
+	font-size: 1.5rem;
+}
+
+.resume-header {
+	font-size: 1.5rem;
+}
+
+.resume-item {
+	font-size: 1.8rem;
+}
+
+.resume-item-subtitle {
+	font-size: 1.8rem;
+}
+
+.resume-date {
+	font-size: 1.2rem;
+}
+
+.resume-text {
+	font-size: 1.5rem;
+}
+
+.resume-ul li {
+	font-size: 1.5rem;
+}
+
+.contact-or {
+	font-size: 1.8rem;
+}
