@@ -39,7 +39,16 @@ p {
 }
 
 .project-desc div p {
-	font-size: 2rem;
+	font-size: 1.8rem;
+}
+
+#resume-left {
+    max-width: 50%
+}
+
+#resume-right {
+    max-width: 50%;
+    padding-left: 8px;
 }
 
 .resume-header {
@@ -55,15 +64,15 @@ p {
 }
 
 .resume-date {
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 }
 
 .resume-text {
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 }
 
 .resume-ul li {
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 }
 
 .contact-or {

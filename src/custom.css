@@ -138,6 +138,15 @@ h3 {
     color: #999;
 }
 
+#resume-left {
+    max-width: 60%
+}
+
+#resume-right {
+    max-width: 40%;
+    padding-left: 32px;
+}
+
 .resume-header {
     font-family: 'Open Sans', sans-serif;
     font-size: 0.8rem;
