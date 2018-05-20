@@ -222,6 +222,10 @@ h3 {
     margin-right: -50%;
 }
 
+#follow-spacer {
+    transition: .3s ease-in-out;
+}
+
 /* Responsive layout - makes columns stack instead of next to each other */
 @media screen and (max-width: 900px) {
     .column {
