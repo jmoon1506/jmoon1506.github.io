@@ -388,7 +388,8 @@
             if (scrollHeight <= titleHeight && parseInt(follow_spacer.style.height) > 0) {
                 follow_spacer.style.height = '0px';
             } else if (scrollHeight > titleHeight) {
-                follow_spacer.style.height = (scrollHeight - titleHeight) + 'px';
+                var spacerHeight = min(scrollHeight - titleHeight, 4096);
+                follow_spacer.style.height = spacerHeight + 'px';
             }
         } else {
             follow_spacer.style.height = '0px';
