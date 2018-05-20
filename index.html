@@ -19,14 +19,17 @@
 </head>
 
 <body>
-
+<?php
+    header('Cache-Control: no cache'); //no cache
+    session_cache_limiter('must-revalidate');
+?>
 <div class="title" style="text-align: center; padding: 30px;">
     <h1>Joseph Moon</h1>
-    <h3>Computer Science Graduate</h3>
+    <h4>Computer Science Graduate</h4>
     <ul class="desc-headers">
         <li class="desc-headers-li"><a class="desc-header" id="desc-header-portfolio" href="#">Portfolio</a></li>
-        <li class="desc-headers-li"><a class="desc-header" id="desc-header-education" href="#">Education</a></li>
         <li class="desc-headers-li"><a class="desc-header" id="desc-header-resume" href="#">Résumé</a></li>
+        <li class="desc-headers-li"><a class="desc-header" id="desc-header-contact" href="#">Contact</a></li>
         <hr id="desc-header-underline"/>
     </ul>
     <a class="btn btn-social-icon btn-lg btn-github" href="https://github.com/jmoon1506"><i class="fa fa-github"></i></a>
@@ -35,8 +38,8 @@
 
 
 
-<div style="width: 100%; overflow: hidden; padding: 16px;">
-    <div style="width: 40%; float: left;">
+<div id="content">
+    <div id="imgs">
         <div class="row"> 
             <div class="column">
             <img class="project-img" src="images/iconoir.jpg" id="iconoir">
@@ -61,7 +64,7 @@
             </div>
         </div>
     </div>
-    <div style="margin-left: 43%; text-align: center;">
+    <div id="descs">
         <div class="project-desc" id="iconoir-desc">
             <h3>Iconoir</h3>
             <div style="display: flex; flex-wrap: nowrap; padding: 16px">
@@ -267,50 +270,92 @@
                 <p>Links: <a href="http://joemoon.me/cs184-combined/hw1.html">Report</a></p>
             </div>
         </div>
-        <div id="education-desc" style="display: none;">
-            <h3>Education</h3>
-            <div style="display: flex; flex-wrap: nowrap; padding: 16px">
-                <span style="max-width: 60%"><img src="images/cs184-mipmap-bilinear.jpg" style="max-width: 90%"/></span>
-                <span style="max-width: 40%"><img src="images/cs184-mipmap-large.jpg" style="max-width: 90%"/></span>
-            </div>
-            <div style="text-align: left;">
-                <p>Wrote a rasterizer for SVG and texture data. Implemented screen rasterization techniques, such as supersampling, bilinear interpolation, and mip-mapping.</p>
-                <p>Type: Coursework</p>
-                <p>Course: CS 284 Graphics, UC Berkeley</p>
-                <p>Skills: C++, OpenGL</p>
-                <p>Links: <a href="http://joemoon.me/cs184-combined/hw1.html">Report</a></p>
-            </div>
-        </div>
+        
         <div id="resume-desc" style="display: none;">
-            <div align="left" style="padding-top: 16px"><a class="btn btn-md"><i class="fa fa-download"></i> <p style="display: inline; font-size: 16px;">Download</p></a></div>
+            <div align="left" style="padding: 0"><a class="btn btn-md link" href='resume.pdf' download><i class="fa fa-download"></i>&nbsp;Download</h3></a></div>
             <hr/>
-            <div style="display: flex; flex-wrap: nowrap; padding: 16px; text-align: left;">
+            <div style="display: flex; flex-wrap: nowrap; text-align: left;">
                 <span style="max-width: 60%">
-                    <h6 class='resume-header'>EXPERIENCE</h6>
-                    <p class='resume-job-title'>Software Developer</p><p class='resume-job-employer'> - Iconoir</p>
-                    <p>Aug 2017 - Dec 2017</p>
-                    <ul>
+                    <p class="resume-item" style="font-size: 2.5rem;">Joseph Moon</p>
+                    <p class='resume-item' style='display: block; margin-bottom: 2rem;'>Computer Science Graduate</p>
+                    <h4 class='resume-header'>EDUCATION</h4>
+                    <p class='resume-item'>University of California, Berkeley</p>
+                    <p class='resume-date'>Aug 2017 - May 2018</p>
+                    <ul class='resume-ul'>
+                        <li>M.E. in Electrical Engineering and Computer Science</li>
+                        <li>GPA: 3.6</li>
+                    </ul>
+                    <p class='resume-item'>University of Texas at Austin</p>
+                    <p class='resume-date'>Aug 2012 - Dec 2016</p>
+                    <ul class='resume-ul'>
+                        <li>B.S. in Petroleum Engineering</li>
+                        <li>Minor in Computer Science</li>
+                        <li>GPA: 3.7</li>
+                    </ul>
+                    <h4 class='resume-header' style='margin-top: 1.2rem;'>EXPERIENCE</h4>
+                    <p class='resume-item'>Software Developer</p><p class='resume-item-subtitle'> &mdash; Iconoir</p>
+                    <p class='resume-date'>Aug 2017 - Dec 2017</p>
+                    <ul class='resume-ul'>
                         <li>Developed a native Android user interface app</li>
                         <li>Created a novel system of asynchronous inter-process communication for non-rooted devices</li>
                     </ul>
+                    <p class='resume-item'>Research Intern</p><p class='resume-item-subtitle'> &mdash; University of Texas at Austin</p>
+                    <p class='resume-date'>May 2015 - Dec 2016</p>
+                    <ul class='resume-ul'>
+                        <li>Conducted finite element surface water simulations on the TACC supercomputing cluster</li>
+                    </ul>
+                    <p class='resume-item'>Research Assistant</p><p class='resume-item-subtitle'> &mdash; University of Texas at Austin</p>
+                    <p class='resume-date'>May 2014 - Aug 2014</p>
+                    <ul class='resume-ul'>
+                        <li>Developed flow models for underground gravity drainage of reservoirs</li>
+                    </ul>
                 </span>
                 <span style="max-width: 40%; padding-left: 32px;">
-                    <h6>SKILLS</h6>
-                    <p>C++</p>
-                    <p>Python</p>
-                    <p>Java, Android</p>
-                    <p>Javascript, HTML/CSS</p>
-                    <p>TensorFlow</p>
-                    <p>WebGL, OpenGL, GLSL</p>
-                    <p>OpenMP, MPI, CUDA</p>
-                    <p>SQL</p>
+                    <h4 class='resume-header'>PORTFOLIO</h4>
+                    <p class='resume-text'>joemoon.me</p>
+                    <h4 class='resume-header'>SOCIAL</h4>
+                    <ul class='resume-ul' style='list-style-type: none; padding: 0; margin: 0;'>
+                        <li>github.com/jmoon1506</li>
+                        <li>linkedin.com/in/josephymoon</li>
+                    </ul>
+                    <h4 class='resume-header'>CONTACT</h4>
+                    <ul class='resume-ul' style='list-style-type: none; padding: 0; margin: 0;'>
+                        <li id='resume-mail'>mail</li>
+                    </ul>
+                    <h4 class='resume-header'>SKILLS</h4>
+                    <ul class='resume-ul' style='list-style-type: none; padding: 0; margin: 0;'>
+                        <li>C++</li>
+                        <li>Python</li>
+                        <li>Java, Android</li>
+                        <li>Javascript, HTML/CSS</li>
+                        <li>TensorFlow</li>
+                        <li>WebGL, OpenGL, GLSL</li>
+                        <li>OpenMP, MPI, CUDA</li>
+                        <li>SQL</li>
+                    </ul>
+                    <h4 class='resume-header'>COURSEWORK</h4>
+                    <p class='resume-text'>Parallel Computing, Graphics, Machine Learning, User Interfaces, Databases, Linear Algebra, Discrete Math, Data Structures, Advanced Calculus, Reservoir Simulation</p>
                 </span>
             </div>
+        </div>
+        <div id="contact-desc" style="display: none;">
+            <p style="margin-bottom: 2rem;"><a class='link' id='contact-mail-link' href='#'><i class="fa fa-envelope"></i>&nbsp;<span id='contact-mail'>mail</span></a></p>
+            <span class="contact-or">OR</span>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfQIwl_sSjgwR4qHkNsrwhLjj7eQMNvPdYQJY8PggSsm4qMNQ/viewform?embedded=true&ttl=0" width="60%" frameborder="0" height="800px" style="display: block; width: 80%; margin: 3rem auto 0 auto;">Loading...</iframe>
         </div>
     </div>
 </div>
 
 <script>
+    var mail4 = 'gm';
+    var mail2 = '1506';
+    var mail1 = 'jmoon';
+    var mail5 = 'ail.';
+    var mail6 = 'com';
+    var mail3 = '@';
+    var current_desc_header;
+    var current_proj_idx = 0;
+
     $.fn.textWidth = function(){
         var text = $(this).html();
         $(this).html('<span>'+text+'</span>');
@@ -319,8 +364,6 @@
         return width;
     };
 
-    var current_desc_header;
-    var current_proj_idx = 0;
     function updateUnderline(width) {
         if (current_desc_header) {
             var underline = document.getElementById('desc-header-underline');
@@ -334,8 +377,8 @@
 
     $(document).ready(function() {
         $('img.project-img').click(function() {
-            document.getElementById('education-desc').style = "display: none";
             document.getElementById('resume-desc').style = "display: none";
+            document.getElementById('contact-desc').style = "display: none";
             var descs = document.getElementsByClassName("project-desc");
             for (var i = 0; i < descs.length; i++) {
                 if (descs[i].id == this.id + '-desc') {
@@ -352,8 +395,8 @@
             updateUnderline(width);
         });
         $('a.desc-header').click(function() {
-            document.getElementById('education-desc').style = "display: none";
             document.getElementById('resume-desc').style = "display: none";
+            document.getElementById('contact-desc').style = "display: none";
             var descs = document.getElementsByClassName("project-desc");
             for (var i = 0; i < descs.length; i++) {
                descs[i].style = "display: none";
@@ -363,10 +406,13 @@
                 if (this == current_desc_header)
                     current_proj_idx = (current_proj_idx + 1) % descs.length;
                 descs[current_proj_idx].style.display = 'block';
-            } else if (this.id == 'desc-header-education') {
-                document.getElementById('education-desc').style = "display: block";
             } else if (this.id == 'desc-header-resume') {
                 document.getElementById('resume-desc').style = "display: block";
+                document.getElementById('resume-mail').innerHTML = mail1 + mail2 + mail3 + mail4 + mail5 + mail6;
+            } else if (this.id == 'desc-header-contact') {
+                document.getElementById('contact-desc').style = "display: block";
+                document.getElementById('contact-mail').innerHTML = ' ' + mail1 + mail2 + mail3 + mail4 + mail5 + mail6;
+                document.getElementById('contact-mail-link').href = 'mailto:' + mail1 + mail2 + mail3 + mail4 + mail5 + mail6;
             }
             current_desc_header = this;
             width = $(this).textWidth();
@@ -378,19 +424,24 @@
             updateUnderline();
             $('#desc-header-underline').removeClass('notransition');
         });
+        document.getElementById('contact').onsubmit = function(e){
+            e.preventDefault();
+            document.getElementById('contact').reset();
+            // alert('blah');
+        };
     });
 </script>
 <script async>
-	WebFontConfig = {
-		google: {
-			families: ["Roboto Slab", "Open Sans:400,700", "Merriweather:400,400i,700"]
-		}
-	};
-	(function(d) {
-		var wf = d.createElement("script"), s = d.scripts[0];
-		wf.src = "src/webfont.js";
-		s.parentNode.insertBefore(wf, s);
-	})(document);
+    WebFontConfig = {
+        google: {
+            families: ["Roboto Slab", "Open Sans:400,700", "Merriweather:400,400i,700"]
+        }
+    };
+    (function(d) {
+        var wf = d.createElement("script"), s = d.scripts[0];
+        wf.src = "src/webfont.js";
+        s.parentNode.insertBefore(wf, s);
+    })(document);
 </script>
 
 </body>

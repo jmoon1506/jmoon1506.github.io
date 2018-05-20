@@ -7,13 +7,17 @@ body {
     /*font-family: Arial;*/
 }
 
-h1, h2, h3, h4 {
+h1, h2, h4 {
     font-family: sans-serif;
     font-weight: normal;
 }
 
-p, li {
-    font-family: 'Roboto Slab', serif;
+p {
+    /*font-family: 'Roboto Slab', serif;*/
+}
+
+h3 {
+    font-family: 'Open Sans', sans-serif;
 }
 
 .project-img {
@@ -23,6 +27,13 @@ p, li {
 
 .project-desc {
     display: none;
+}
+
+.project-desc div p {
+    font-family: 'Merriweather', serif;
+    color: #666;
+    font-size: 0.8rem;
+    line-height: 1.5;
 }
 
 .desc-headers {
@@ -105,12 +116,131 @@ p, li {
     filter: grayscale(0%) opacity(50%);
 }
 
+.link {
+    text-decoration: none;
+    color: black;
+    padding: 0;
+    display: inline;
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.link:hover {
+    color: #999;
+}
+
+.resume-header {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8rem;
+    color: #2079c7;
+    font-weight: bold;
+    margin: 1rem 0 0.2rem 0;
+}
+
+.resume-item {
+    font-family: 'Merriweather', serif;
+    /*font-size: 1rem;*/
+    font-weight: bold;
+    /*display: inline;*/
+    margin: 0.2rem 0 0 0;
+    display: inline-block;
+}
+
+.resume-item-subtitle {
+    font-family: 'Merriweather', serif;
+    /*font-size: 1rem;*/
+    font-style: italic;
+    display: inline;
+}
+
+.resume-date {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.7rem;
+    color: #666;
+    margin: 0.4rem 0 0.4rem 0;
+    /*display: inline;*/
+}
+
+.resume-text {
+    font-family: 'Merriweather', serif;
+    font-size: 0.8rem;
+    color: #666;
+    margin: 0 0 0.2rem 0;
+    line-height: 1.5;
+}
+
+.resume-ul {
+    margin: 0 0 0.5rem 0;
+}
+
+.resume-ul li {
+    font-family: 'Merriweather', serif;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.2rem;
+}
+
+#content {
+    width: 100%;
+    overflow: hidden;
+    padding: 16px;
+}
+
+#imgs {
+    width: 40%;
+    float: left;
+}
+
+#descs {
+    margin-left: 43%;
+    text-align: center;
+}
+
+.contact-or {
+    overflow: hidden;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+}
+.contact-or:before,
+.contact-or:after {
+    background-color: #333;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 40%;
+}
+.contact-or:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+.contact-or:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+
 /* Responsive layout - makes columns stack instead of next to each other */
 @media screen and (max-width: 900px) {
     .column {
         -ms-flex: 50%;
         flex: 50%;
         max-width: 50%;
+    }
+    .column img {
+        margin-top: 4px;
+        padding: 8px;
+    }
+    #imgs {
+        width: 30%;
+    }
+    #descs {
+        margin-left: 33%;
+    }
+    #content {
+        padding: 8px;
     }
 }
 
@@ -132,25 +262,17 @@ p, li {
         flex: 100%;
         max-width: 100%;
     }
-}
-
-.resume-header {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 0.7rem;
-    color: #2079c7;
-    font-weight: bold;
-}
-
-.resume-job-title {
-    font-family: 'Merriweather', serif;
-    font-size: 0.7rem;
-    font-weight: bold;
-    display: inline;
-}
-
-.resume-job-employer {
-    font-family: 'Merriweather', serif;
-    font-size: 0.7rem;
-    font-style: italic;
-    display: inline;
+    .column img {
+        margin-top: 2px;
+        padding: 4px;
+    }
+    #imgs {
+        width: 20%;
+    }
+    #descs {
+        margin-left: 23%;
+    }
+    #content {
+        padding: 4px;
+    }
 }
