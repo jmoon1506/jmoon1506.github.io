@@ -14,10 +14,12 @@ h1, h2, h4 {
 
 p {
     /*font-family: 'Roboto Slab', serif;*/
+    font-size: 1rem;
 }
 
 h3 {
     font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
 }
 
 .project-img {
@@ -140,7 +142,7 @@ h3 {
 
 .resume-item {
     font-family: 'Merriweather', serif;
-    /*font-size: 1rem;*/
+    font-size: 1rem;
     font-weight: bold;
     /*display: inline;*/
     margin: 0.2rem 0 0 0;
@@ -149,7 +151,7 @@ h3 {
 
 .resume-item-subtitle {
     font-family: 'Merriweather', serif;
-    /*font-size: 1rem;*/
+    font-size: 1rem;
     font-style: italic;
     display: inline;
 }
